@@ -1,11 +1,12 @@
 import React from 'react'
 import update from 'immutability-helper'
+import Router from 'react-router-dom'
 
 //dumb components (stateless)
-import Council from './Council'
+import Council from '../components/Council'
 
 //smart components (with state)
-import CouncilForm from './CouncilForm'
+import CouncilForm from '../components/CouncilForm'
 
 
 class CouncilsContainer extends React.Component {
@@ -81,9 +82,6 @@ class CouncilsContainer extends React.Component {
             .catch(error => console.log(error))
     }
 
-
-
-
     resetNotification = () => {
         this.setState({notification: ''})
     }
@@ -109,6 +107,7 @@ class CouncilsContainer extends React.Component {
 
                 <div>
                     {this.state.councils.map((council) => {
+
                         if (this.state.editingCouncilId === council.id) {
                             return (
                                 <CouncilForm
@@ -116,7 +115,8 @@ class CouncilsContainer extends React.Component {
                                     key={council.id}
                                     updateCouncil={this.updateCouncil}
                                     nameRef={input => this.name = input}
-                                    resetNotification={this.resetNotification} />
+                                    resetNotification={this.resetNotification}
+                                />
                             )
                         }
                         else {
