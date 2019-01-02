@@ -42,23 +42,30 @@ export default class NewWasteItem extends Component {
 
     handleSubmit = async event => {
         event.preventDefault();
-
         this.setState({isLoading: true});
-    }
 
-    createWasteItem(wasteItem) {
-
-        fetch('http://localhost:3001/councils', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({wasteItem})
+        let body = JSON.stringify({
+            resident_id: this.state.resident_id,
+            category_id: this.state.category_id,
+            title: this.state.description,
+            length: this.state.length,
+            width: this.state.width,
+            height: this.state.height,
+            weight: this.state.weight,
+            quantity: this.state.quantity,
+            notes: this.state.notes
         })
-            .then(response => response.json())
-            .then(newWasteItem => {
-                console.log(newWasteItem)
-            })
-            .catch(error => console.log(error))
+
+        fetch('http://localhost:3001/waste_items', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: body,
+        })
+            .then((response) => {return response.json()})
     }
+
 
 
     render() {
