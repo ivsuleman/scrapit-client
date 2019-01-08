@@ -1,0 +1,27 @@
+.resident_card {
+    height: 3.5em;
+    padding: 0 1em;
+    overflow: hidden;
+    background-color: lightgray;
+    margin: 1em 0;
+    transition: .3s;
+    position: relative;
+    border-radius: 4px;
+}
+
+.resident_card .arrow {
+    position: absolute;
+    right: 20px;
+    top: 7px;
+    font-size: 2em;
+}
+
+.resident_card.expanded {
+    height: auto;
+}
+
+.resident_card h3 {
+    margin: 0;
+    padding: 0.7em 0;
+    pointer-events: none;
+}

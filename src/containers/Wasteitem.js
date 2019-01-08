@@ -18,7 +18,7 @@ export default class NewWasteItem extends Component {
 
         this.state = {
             isLoading: null,
-            resident_id: 1,
+            resident_id: 4,
             category_id: "",
             title: "",
             length: "",
@@ -27,8 +27,6 @@ export default class NewWasteItem extends Component {
             weight: "",
             quantity: "",
             notes: "",
-            day: "",
-            time: "",
             state: "open",
             slot: new Date()
         };
@@ -63,14 +61,15 @@ export default class NewWasteItem extends Component {
         let body = JSON.stringify({
             resident_id: this.state.resident_id,
             category_id: this.state.category_id,
-            title: this.state.description,
+            title: this.state.title,
             length: this.state.length,
             width: this.state.width,
             height: this.state.height,
             weight: this.state.weight,
             quantity: this.state.quantity,
             notes: this.state.notes,
-            state: this.state.state
+            state: this.state.state,
+            slot: this.state.slot
         })
 
         fetch('http://localhost:3001/waste_items', {
@@ -104,7 +103,7 @@ export default class NewWasteItem extends Component {
                     selected={this.state.slot}
                     onChange={this.handleDate}
                     value={this.state.startDate}
-                    minDate={new Date()}
+                    minDate={new Date(today.setDate(today.getDate() + 1))}
                     maxDate={new Date(today.setDate(today.getDate() + 5))}
                     showTimeSelect
                     timeFormat="HH:mm"
@@ -136,7 +135,6 @@ export default class NewWasteItem extends Component {
                             value={this.state.category_id}
                             componentClass="select"
                         >
-
                             <option value="1">Bath (plastic)</option>
                             <option value="2">Bath (fibreglass)</option>
                             <option value="3">BBQ</option>
@@ -232,7 +230,6 @@ export default class NewWasteItem extends Component {
                             <option value="93">Water tank (small plastic)</option>
                             <option value="94">Worktop (6ft maximum)</option>
                             <option value="95">Other...</option>
-
                         </FormControl>
                     </FormGroup>
 

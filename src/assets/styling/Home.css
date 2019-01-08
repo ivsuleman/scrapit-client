@@ -11,3 +11,37 @@
   .Home .lander p {
     color: #999;
   }
+
+  .pane_row {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1em;
+  }
+
+  .pane_icon {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .description {
+    flex: 1 1 auto;
+  }
+
+  .pane2_resident {
+    margin-top: 5em;
+  }
+
+  .pane_title {
+    text-align: center;
+  }
+
+  .pane_image img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .footer {
+    
+  }
