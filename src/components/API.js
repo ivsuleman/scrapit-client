@@ -1,6 +1,6 @@
 class API {
   static signin(user) {
-    return fetch("https://scrapit-app-api.herokuapp.com/signin", {
+    return fetch("http://https://scrapit-api.herokuapp.com/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user)
@@ -8,7 +8,7 @@ class API {
   }
 
   static validate() {
-    return fetch("https://scrapit-app-api.herokuapp.com/validate", {
+    return fetch("http://https://scrapit-api.herokuapp.com/validate", {
       headers: {
         "Content-Type": "application/json",
         Authorization: localStorage.getItem("username")

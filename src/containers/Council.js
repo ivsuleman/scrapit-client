@@ -19,13 +19,13 @@ class CouncilsContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://scrapit-app-api.herokuapp.com/councils")
+    fetch("http://https://scrapit-api.herokuapp.com/councils")
       .then(resp => resp.json())
       .then(councils => this.setState({ councils }));
   }
 
   addNewCouncil = () => {
-    fetch("https://scrapit-app-api.herokuapp.com/councils", {
+    fetch("http://https://scrapit-api.herokuapp.com/councils", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -70,7 +70,7 @@ class CouncilsContainer extends React.Component {
   };
 
   deleteIdea = id => {
-    fetch(`https://scrapit-app-api.herokuapp.com/${id}`, {
+    fetch(`http://https://scrapit-api.herokuapp.com/${id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" }
     })

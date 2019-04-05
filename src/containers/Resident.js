@@ -12,7 +12,7 @@ export default class Resdient extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://scrapit-app-api.herokuapp.com/waste_items")
+    fetch("http://https://scrapit-api.herokuapp.com/waste_items")
       .then(response => {
         return response.json();
       })

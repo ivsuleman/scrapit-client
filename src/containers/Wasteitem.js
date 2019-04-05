@@ -70,7 +70,7 @@ export default class NewWasteItem extends Component {
       slot: this.state.slot
     });
 
-    fetch("https://scrapit-app-api.herokuapp.com/waste_items", {
+    fetch("http://https://scrapit-api.herokuapp.com/waste_items", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

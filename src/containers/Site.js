@@ -15,7 +15,7 @@ export default class Site extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://scrapit-app-api.herokuapp.com/waste_items")
+    fetch("http://https://scrapit-api.herokuapp.com/waste_items")
       .then(response => {
         return response.json();
       })
@@ -35,7 +35,7 @@ export default class Site extends React.Component {
     });
 
     fetch(
-      `https://scrapit-app-api.herokuapp.com/waste_items/${
+      `http://https://scrapit-api.herokuapp.com/waste_items/${
         this.state.waste_item_id
       }`,
       {

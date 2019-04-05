@@ -39,7 +39,9 @@ class CouncilForm extends React.Component {
     };
 
     fetch(
-      `https://scrapit-app-api.herokuapp.com/councils/${this.props.council.id}`,
+      `http://https://scrapit-api.herokuapp.com/councils/${
+        this.props.council.id
+      }`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
